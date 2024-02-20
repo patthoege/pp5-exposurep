@@ -5,6 +5,10 @@
   min-height: 100vh;
 }
 
+.Main {
+  padding-top: 100px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -12,14 +16,17 @@
 a {
   color: #ffffff;
   transition: color ease-in-out 0.3s;
+  text-decoration: none;
+  background-color: black;
 }
  
 a:hover {
   text-decoration: none;
+  color: rgba(100, 182, 172, 0.5);
 }
 
 a:hover i {
-  color: #80e7db;
+  color: #64b6ac;
   transition: color ease-in-out 0.3s;
 }
 
