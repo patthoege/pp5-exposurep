@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import axios from "axios"
 
 import Form from "react-bootstrap/Form";
@@ -14,8 +14,11 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import { SetCurrentUserContext } from "../../App";
 
 function SignInForm() {
+
+    const setCurrentUser = useContext(SetCurrentUserContext);
 
     const [signInData, setSignInData] = useState({
         username: "",
@@ -29,7 +32,8 @@ function SignInForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
             try {
-            await axios.post("/dj-rest-auth/login/", signInData);
+            const {data} = await axios.post("/dj-rest-auth/login/", signInData);
+            setCurrentUser(data.user)
             history.push("/");
             } catch (err) {
                 setErrors(err.response?.data);
@@ -61,9 +65,9 @@ function SignInForm() {
                 />
             </Form.Group>
             {errors.username?.map((message, idx) => (
-                  <Alert key={idx} variant="warning">
+                <Alert key={idx} variant="warning">
                     {message}
-                  </Alert>
+                </Alert>
             ))}
 
             <Form.Group controlId="formBasicPassword">
@@ -87,9 +91,9 @@ function SignInForm() {
                 Sign In
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
-                    <Alert key={idx} variant="warning" className="mt-3">
-                      {message}
-                    </Alert>
+                <Alert key={idx} variant="warning" className="mt-3">
+                    {message}
+                </Alert>
             ))}
         </Form>
 
