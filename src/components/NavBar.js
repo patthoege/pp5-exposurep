@@ -14,12 +14,6 @@ const NavBar = () => {
     <NavLink 
       className={styles.NavLink}
       activeClassName={styles.Active}
-      to="/events">
-      <i className="fa-solid fa-location-crosshairs"></i> Events
-    </NavLink>
-    <NavLink 
-      className={styles.NavLink}
-      activeClassName={styles.Active}
       to="/signin">
       <i className="fas fa-sign-in-alt"></i> Sign In
     </NavLink>
