@@ -69,6 +69,10 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
+            <div>
+                <i className="fas fa-map-marker-alt"></i> 
+                {location}
+            </div>
             {is_owner && postPage && "..."}
           </div>
         </Media>
@@ -78,7 +82,6 @@ const Post = (props) => {
       </Link>
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {location && <Card.Text>{location}</Card.Text>}
         {content && <Card.Text>{content}</Card.Text>}
         <div className={styles.PostBar}>
           {is_owner ? (
