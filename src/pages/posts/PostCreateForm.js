@@ -54,6 +54,7 @@ function PostCreateForm() {
     const formData = new FormData();
 
     formData.append('title', title);
+    formData.append('content', content);
     formData.append('location', location);
     formData.append('image', imageInput.current.files[0]);
 
