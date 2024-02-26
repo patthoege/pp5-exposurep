@@ -5,6 +5,7 @@ import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 const Post = (props) => {
   const {
@@ -73,7 +74,7 @@ const Post = (props) => {
                 <i className="fas fa-map-marker-alt"></i> 
                 {location}
             </div>
-            {is_owner && postPage && "..."}
+            {is_owner && postPage && <MoreDropdown />}
           </div>
         </Media>
       </Card.Body>
