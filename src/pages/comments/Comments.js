@@ -7,7 +7,16 @@ import { MoreDropdown } from "../../components/MoreDropdown";
 import styles from "../../styles/Comment.module.css";
 
 const Comment = (props) => {
-  const { profile_id, profile_image, owner, updated_at, content } = props;
+  const { 
+    profile_id, 
+    profile_image, 
+    owner, 
+    updated_at, 
+    content,
+    id,
+    setPost,
+    setComments,
+  } = props;
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
@@ -25,7 +34,7 @@ const Comment = (props) => {
           <p>{content}</p>
         </Media.Body>
         {is_owner && (
-          <MoreDropdown  />
+          <MoreDropdown handleEdit={() => {}} handleDelete={handleDelete} />
         )}
       </Media>
     </div>
