@@ -16,6 +16,10 @@ import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useProfileData, useSetProfileData, } from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
+import Post from "../posts/Post";
+import NoPosts from "../../assets/no-posts.png";
 
 
 function ProfilePage() {
@@ -104,6 +108,22 @@ function ProfilePage() {
       <hr />
       <p className="text-center">Profile owner's posts</p>
       <hr />
+      {profilePosts.results.length ? (
+        <InfiniteScroll 
+            children={profilePosts.results.map((post) => (
+                <Post key={post.id} {...post} setPosts={setProfilePosts} />
+            ))}
+            dataLength={profilePosts.results.length}
+            loader={<Asset spinner />}
+            hasMore={!!profilePosts.next}
+            next={() => fetchMoreData(profilePosts, setProfilePosts)}
+        />
+        ) : (
+            <Asset
+            src={NoPosts}
+            message={`${profile?.owner} hasn't posted yet`}
+            />
+        )}
     </>
   );
 
