@@ -25,7 +25,7 @@ function ProfilePage() {
   const setProfileData = useSetProfileData();
   const {pageProfile} = useProfileData();
   const [profile] = pageProfile.results;
-  
+  const is_owner = currentUser?.username === profile?.owner;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,9 +73,25 @@ function ProfilePage() {
           </Row>
         </Col>
         <Col lg={3} className="text-lg-right">
-        <p>Follow button</p>
+        {currentUser &&
+         !is_owner &&
+         (profile?.following_id ? (
+            <Button
+             className={`${btnStyles.Button} ${btnStyles.BlueOutline}`}
+             onClick={() => {}}
+            >
+             unfollow
+            </Button>
+         ) : (
+            <Button
+             className={`${btnStyles.Button} ${btnStyles.Blue}`}
+             onClick={() => {}}
+            >
+             follow
+            </Button>
+         ))}
         </Col>
-        <Col className="p-3">Profile content</Col>
+        {profile?.content && <Col className="text-lg-left p-3">{profile.content}</Col>}
       </Row>
     </>
   );
