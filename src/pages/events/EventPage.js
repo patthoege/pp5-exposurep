@@ -7,8 +7,7 @@ import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
-
-
+import Event from "./Event";
 
 function EventPage() {
   const  { id } = useParams();
@@ -31,7 +30,7 @@ function EventPage() {
 
   return (
     <Container>
-      <h1>Single Event Page! </h1>
+      <Event {...event.results[0]} setEvents={setEvent} eventPage />
     </Container>
   );
 }

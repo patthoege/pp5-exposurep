@@ -1,0 +1,27 @@
+.Event {
+    background-color: #000000;
+    border: 1px solid #dadadf;
+    border-radius: 2px;
+    margin-bottom: 16px;
+}
+  
+.Save {
+    color: #64b6ac;
+}
+  
+.Save:hover {
+    color: #64b6ac;
+}
+  
+.SaveOutline:hover {
+    color: #64b6ac;
+}
+
+.OnHover {
+    color: #F4743B;
+}
+
+.OnHover:hover {
+    color: #64b6ac;
+    text-decoration: none;
+}
