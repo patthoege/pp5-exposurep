@@ -17,6 +17,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import CreateEventForm from "./pages/events/CreateEventForm";
 import EventPage from "./pages/events/EventPage";
 import EventsPage from "./pages/events/EventsPage";
+import EventEditForm from "./pages/events/EventEditForm";
 
 
 function App() {
@@ -76,6 +77,7 @@ function App() {
                 />
               )}
             />
+            <Route exact path="/events/:id/edit" render={() => <EventEditForm /> } />
             <Route render={() => <p>Page Not Found!</p>} />
           </Switch>
         </Container>
