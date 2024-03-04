@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -12,6 +12,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function EventEditForm() {
     const [errors, setErrors] = useState({});
@@ -26,6 +27,24 @@ function EventEditForm() {
     });
     const { title, content, date, time, place, event_link, category } = eventData;
     const history = useHistory();
+    const { id } = useParams();
+
+    useEffect(() => {
+        const handleMount = async () => {
+          try {
+            const { data } = await axiosReq.get(`/events/${id}`);
+            const { title, content, date, time, place, event_link, category, is_owner } = data;
+    
+            is_owner ? setEventData({ 
+                title, content, date, time, place, event_link, category
+            }) : history.push("/");
+          } catch (err) {
+            console.log(err);
+          }
+        };
+    
+        handleMount();
+      }, [history, id]);
 
     const handleChange = (event) => {
       setEventData({
@@ -47,8 +66,8 @@ function EventEditForm() {
       formData.append('category', category);
 
       try {
-        const { data } = await axiosReq.post("/events/", formData);
-        history.push(`/events/${data.id}`);
+        await axiosReq.put(`/events/${id}`, formData);
+        history.push(`/events/${id}`);
         console.log(formData);
       } catch (err) {
         console.log(err);
@@ -183,7 +202,7 @@ function EventEditForm() {
                   cancel
                 </Button>
                 <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-                  create
+                  save
                 </Button>
             </Form>
         </Container>
