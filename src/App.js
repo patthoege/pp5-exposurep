@@ -72,7 +72,7 @@ function App() {
               render={() => (
                 <EventsPage 
                   message="No results found. Adjust the search keyboard or save a post." 
-                  filter={`saved__owner__profile=${profile_id}&ordering=-saved__created_on&`}
+                  filter={`saved__owner__profile=${profile_id}&ordering=created_on&`}
                 />
               )}
             />
