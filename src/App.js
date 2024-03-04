@@ -65,7 +65,17 @@ function App() {
             <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
             <Route exact path="/events/create" render={() => <CreateEventForm />} />
             <Route exact path="/events/:id" render={() => <EventPage />} />
-            <Route exact path="/events" render={() => <EventsPage message="No results found. Adjust the search keyboard. " />} />
+            <Route exact path="/events" render={() => <EventsPage message="No results found. Adjust the search keyboard." />} />
+            <Route 
+              exact 
+              path="/saved" 
+              render={() => (
+                <EventsPage 
+                  message="No results found. Adjust the search keyboard or save a post." 
+                  filter={`saved__owner__profile=${profile_id}&ordering=-saved__created_on&`}
+                />
+              )}
+            />
             <Route render={() => <p>Page Not Found!</p>} />
           </Switch>
         </Container>
