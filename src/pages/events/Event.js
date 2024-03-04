@@ -47,6 +47,22 @@ function Event(props) {
     }
   };
 
+  const handleUnsave = async () => {
+    try {
+      await axiosRes.delete(`/saved/${save_id}/`);
+      setEvents((prevEvents) => ({
+        ...prevEvents,
+        results: prevEvents.results.map((event) => {
+          return event.id === id
+            ? { ...event, saved_count: event.saved_count - 1, save_id: null }
+            : event;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Card className={styles.Event}>
       <Card.Body>
@@ -67,7 +83,7 @@ function Event(props) {
               <i className="far fa-bookmark" />
             </OverlayTrigger>
           ) : save_id ? (
-            <span onClick={() => {}}>
+            <span onClick={handleUnsave}>
               <i className={`fas fa-bookmark ${styles.Save}`} />
             </span>
           ) : currentUser ? (
