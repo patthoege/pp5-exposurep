@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 
-import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-import appStyles from "../../App.module.css";
-import styles from "../../styles/EventsPage.module.css";
-import NoResults from "../../assets/no-results.png";
+// import styles from "../../styles/EventsPage.module.css";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
+
+import Event from "./Event";
+import Asset from "../../components/Assets";
+
+import NoResults from "../../assets/no-results.png";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function EventsPage({ message, filter = "" }) {
   const [events, setEvents] = useState({ results: [] });
@@ -44,7 +48,30 @@ function EventsPage({ message, filter = "" }) {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
        <PopularProfiles mobile />
-        <p>List of events coming soon here!</p>
+        
+       {hasLoaded ? (
+        <>
+            {events.results.length ? (
+                <InfiniteScroll
+                    children={events.results.map((event) => (
+                        <Event key={event.id} {...event} setEvents={setEvents} />
+                    ))}
+                    dataLength={events.results.length}
+                    loader={<Asset spinner />}
+                    hasMore={!!events.next}
+                    next={() => fetchMoreData(events, setEvents)}
+                />
+            ) : (
+                <Container>
+                    <Asset src={NoResults} message={message} />
+                </Container>
+            )}
+        </>
+        ) : (
+            <Container>
+                <Asset spinner />
+            </Container>
+        )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
        <PopularProfiles />

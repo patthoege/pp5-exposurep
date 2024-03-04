@@ -65,7 +65,7 @@ function App() {
             <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
             <Route exact path="/events/create" render={() => <CreateEventForm />} />
             <Route exact path="/events/:id" render={() => <EventPage />} />
-            <Route exact path="/events" render={() => <EventsPage message="No results found." />} />
+            <Route exact path="/events" render={() => <EventsPage message="No results found. Adjust the search keyboard. " />} />
             <Route render={() => <p>Page Not Found!</p>} />
           </Switch>
         </Container>
