@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefaults';
+import { MoreDropdown } from '../../components/MoreDropdown';
 
 
 function Event(props) {
@@ -76,32 +77,34 @@ function Event(props) {
             <span className="text-muted">Created on {created_on}.</span>
           </div>
           <div>
-          {is_owner ? (
-            <OverlayTrigger
-              placement="top"
-              overlay={<Tooltip>You can't save your own event!</Tooltip>}
-            >
-              <i className="far fa-bookmark" />
-            </OverlayTrigger>
-          ) : save_id ? (
-            <span onClick={handleUnsave}>
-              <i className={`fas fa-bookmark ${styles.Save}`} />
-            </span>
-          ) : currentUser ? (
-            <span onClick={handleSave}>
-              <i className={`far fa-bookmark ${styles.SaveOutline}`} />
-            </span>
-          ) : (
-            <OverlayTrigger
-              placement="top"
-              overlay={<Tooltip>Log in to save events!</Tooltip>}
-            >
-              <i className="fa-regular fa-bookmark"/>
-            </OverlayTrigger>
-          )}
-          {saved_count}
-          {is_owner && eventPage && "..."}
-        </div>
+          <div className="d-flex align-items-center">
+            {is_owner ? (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>You can't save your own event!</Tooltip>}
+              >
+                <i className="far fa-bookmark" />
+              </OverlayTrigger>
+            ) : save_id ? (
+              <span onClick={handleUnsave}>
+                <i className={`fas fa-bookmark ${styles.Save}`} />
+              </span>
+            ) : currentUser ? (
+              <span onClick={handleSave}>
+                <i className={`far fa-bookmark ${styles.SaveOutline}`} />
+              </span>
+            ) : (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Log in to save events!</Tooltip>}
+              >
+                <i className="fa-regular fa-bookmark"/>
+              </OverlayTrigger>
+            )}
+            <div className="mr-2">{saved_count}</div>
+              {is_owner && eventPage && <MoreDropdown />}
+            </div>
+          </div>
         </Media>
       </Card.Body>
       <Card.Body>
