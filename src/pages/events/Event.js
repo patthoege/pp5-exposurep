@@ -15,6 +15,7 @@ function Event(props) {
       profile_id, 
       profile_image,
       save_id,
+      saved_count,
       created_on, 
       title,
       content, 
@@ -98,6 +99,7 @@ function Event(props) {
               <i className="fa-regular fa-bookmark"/>
             </OverlayTrigger>
           )}
+          {saved_count}
           {is_owner && eventPage && "..."}
         </div>
         </Media>
