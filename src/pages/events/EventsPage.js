@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 
+import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-// import styles from "../../styles/EventsPage.module.css";
+import styles from "../../styles/EventsPage.module.css";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -48,6 +49,20 @@ function EventsPage({ message, filter = "" }) {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
        <PopularProfiles mobile />
+
+       <i className={`fas fa-search ${styles.SearchIcon}`} />
+        <Form 
+          className={styles.SearchBar}
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <Form.Control
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            type="text"
+            className="mr-sm-2"
+            placeholder="Search events by user, title, category or location"
+          />
+        </Form>
         
        {hasLoaded ? (
         <>
