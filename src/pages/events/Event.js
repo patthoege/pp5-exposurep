@@ -33,6 +33,10 @@ function Event(props) {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  const handleEdit = () => {
+    history.push(`/events/${id}/edit`);
+  };
+
   const handleSave = async () => {
     try {
       const { data } = await axiosRes.post("/saved/", { event: id });
@@ -102,7 +106,7 @@ function Event(props) {
               </OverlayTrigger>
             )}
             <div className="mr-2">{saved_count}</div>
-              {is_owner && eventPage && <MoreDropdown />}
+              {is_owner && eventPage && <MoreDropdown handleEdit={handleEdit}/>}
             </div>
           </div>
         </Media>
