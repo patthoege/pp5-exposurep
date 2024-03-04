@@ -5,6 +5,7 @@ import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
+import { axiosRes } from '../../api/axiosDefaults';
 
 
 function Event(props) {
@@ -23,11 +24,28 @@ function Event(props) {
       event_link, 
       category,
       eventPage,
+      setEvents,
   } = props;
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
+
+  const handleSave = async () => {
+    try {
+      const { data } = await axiosRes.post("/saved/", { event: id });
+      setEvents((prevEvents) => ({
+        ...prevEvents,
+        results: prevEvents.results.map((event) => {
+          return event.id === id
+            ? { ...event, saved_count: event.saved_count + 1, save_id: data.id }
+            : event;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <Card className={styles.Event}>
@@ -53,7 +71,7 @@ function Event(props) {
               <i className={`fas fa-bookmark ${styles.Save}`} />
             </span>
           ) : currentUser ? (
-            <span onClick={() => {}}>
+            <span onClick={handleSave}>
               <i className={`far fa-bookmark ${styles.SaveOutline}`} />
             </span>
           ) : (
