@@ -37,6 +37,18 @@ function Event(props) {
     history.push(`/events/${id}/edit`);
   };
 
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this event?");
+    if (confirmDelete) {
+      try {
+        await axiosRes.delete(`/events/${id}`);
+        history.goBack();
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
+
   const handleSave = async () => {
     try {
       const { data } = await axiosRes.post("/saved/", { event: id });
@@ -106,7 +118,12 @@ function Event(props) {
               </OverlayTrigger>
             )}
             <div className="mr-2">{saved_count}</div>
-              {is_owner && eventPage && <MoreDropdown handleEdit={handleEdit}/>}
+              {is_owner && eventPage && (
+              <MoreDropdown 
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+              />
+              )}
             </div>
           </div>
         </Media>
