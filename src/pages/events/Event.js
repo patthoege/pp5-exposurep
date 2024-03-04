@@ -105,37 +105,38 @@ function Event(props) {
         </Media>
       </Card.Body>
       <Card.Body>
-
-      <Card.Body className="ml-2">
-      <div className="row">
-          <div className="col">
-            {title && <Card.Title>{title}</Card.Title>}
+        <Card.Body className="ml-2">
+          <div className="row">
+            <div className="col">
+              <Link to={`/events/${id}`}> 
+                {title && <Card.Title><strong>{title}</strong></Card.Title>} 
+              </Link> 
+            </div>
           </div>
-        </div>
-        {category && <Card.Text className="text-muted">{category}</Card.Text>}
-        {content && <Card.Text>{content}</Card.Text>}
-      </Card.Body>  
+          {category && <Card.Text className="text-muted">{category}</Card.Text>}
+          {content && <Card.Text>{content}</Card.Text>}
+        </Card.Body>  
 
-      <Card.Body className="text-center">
-        <div>
-          Date: {date}  |  Time: {time}
-        </div>
-        <div>
-          Location event will take place at <strong>{place}</strong>            
-        </div>
-        {event_link && (
+        <Card.Body className="text-center">
           <div>
-            For more information, you can visit the event page {' '}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href={event_link}
-              className={styles.OnHover}>
-              <strong>HERE</strong>
-            </a>
-          </div> 
-        )}
-        </Card.Body>      
+            Date: {date}  |  Time: {time}
+          </div>
+          <div>
+            Location event will take place at <strong>{place}</strong>            
+          </div>
+          {event_link && (
+            <div>
+              For more information, you can visit the event page {' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={event_link}
+                className={styles.OnHover}>
+                <strong>HERE</strong>
+              </a>
+            </div> 
+          )}
+          </Card.Body>      
       </Card.Body>
     </Card>
   )
