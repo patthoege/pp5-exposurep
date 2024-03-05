@@ -10,7 +10,6 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
 
-
 const Comment = (props) => {
   const { 
     profile_id, 
@@ -20,6 +19,7 @@ const Comment = (props) => {
     content,
     id,
     setPost,
+    setEvent,
     setComments,
   } = props;
 
@@ -27,9 +27,23 @@ const Comment = (props) => {
   const is_owner = currentUser?.username === owner;
   const [showEditForm, setShowEditForm] = useState(false);
 
+
+  // BUG handleDelete comment
+  // Deletes the comment from post and event after only being refreshed
+  // comments_count decreases live
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`);
+
+      setEvent((prevEvent) => ({
+        results: [
+          {
+            ...prevEvent.results[0],
+            comments_count: prevEvent.results[0].comments_count - 1,
+          },
+        ],
+      }));
+
       setPost((prevPost) => ({
         results: [
           {
@@ -62,6 +76,8 @@ const Comment = (props) => {
             profile_id={profile_id}
             content={content}
             profileImage={profile_image}
+            setPost={id}
+            setEvent={id}
             setComments={setComments}
             setShowEditForm={setShowEditForm}
           />
