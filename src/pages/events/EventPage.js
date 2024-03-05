@@ -52,7 +52,7 @@ function EventPage() {
            <CommentCreateForm
              profile_id={currentUser.profile_id}
              profileImage={profile_image}
-             post={id}
+             event={id}
              setEvent={setEvent}
              setComments={setComments}
            />
@@ -67,6 +67,7 @@ function EventPage() {
                   key={comment.id}
                   {...comment}
                   setEvent={setEvent}
+                  event={id}
                   setComments={setComments}
                 />
               ))}
