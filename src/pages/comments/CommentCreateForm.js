@@ -9,24 +9,34 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentCreateForm(props) {
-  const { post, setPost, setComments, profileImage, profile_id } = props;
+  const { post, setPost, event, setEvent, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
+
+  console.log('Post:', post);
+  console.log('Event:', event);
 
   const handleChange = (event) => {
     setContent(event.target.value);
   };
 
+  // BUG !
+  // COMMENT INPUT REMAINS AFTER CREATING A COMMENT
+  // CREATES A COMMENT
+  // POST STAYS UNDEFINED
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const { data } = await axiosRes.post("/comments/", {
         content,
-        post,
+        post: props.post, // Use props.post directly
+        event: props.event, // Use props.event directly
       });
+
       setComments((prevComments) => ({
         ...prevComments,
         results: [data, ...prevComments.results],
-      }));
+      })); 
+      
       setPost((prevPost) => ({
         results: [
           {
@@ -35,6 +45,16 @@ function CommentCreateForm(props) {
           },
         ],
       }));
+
+      setEvent((prevEvent) => ({
+        results: [
+          {
+            ...prevEvent.results[0],
+            comments_count: prevEvent.results[0].comments_count + 1,
+          },
+        ],
+      }));
+
       setContent("");
     } catch (err) {
       console.log(err);
