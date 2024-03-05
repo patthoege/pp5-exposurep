@@ -24,12 +24,13 @@ function EventPage() {
   useEffect(() => {
     const handleMount = async () => {
         try {
-            const [{ data: event }] = await Promise.all([
+            const [{ data: event }, { data: comments} ] = await Promise.all([
                 axiosReq.get(`/events/${id}`),
+                axiosReq.get(`/comments/?event=${id}`),
             ]);
-            console.log(event)
             setEvent({ results: [event] });
-        } catch (err) {
+            setComments(comments);
+        } catch(err) {
             console.log(err);
         };
     };
@@ -37,9 +38,6 @@ function EventPage() {
 }, [id]);
 
   return (
-    // <Container>
-    //   <Event {...event.results[0]} setEvents={setEvent} eventPage />
-    // </Container>
      <Row className="h-100">
      <Col className="py-2 p-0 p-lg-2" lg={8}>
       <PopularProfiles mobile />
