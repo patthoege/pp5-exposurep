@@ -55,6 +55,7 @@ function EventPage() {
              event={id}
              setEvent={setEvent}
              setComments={setComments}
+             evComment
            />
          ) : comments.results.length ? (
            "Comments"
