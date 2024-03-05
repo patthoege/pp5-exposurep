@@ -20,9 +20,11 @@ function CommentCreateForm(props) {
   };
 
   // BUG !
-  // COMMENT INPUT REMAINS AFTER CREATING A COMMENT
-  // CREATES A COMMENT
-  // POST STAYS UNDEFINED
+  // TypeError: setPost and setEvent are not a function
+  // In Post comment field the event value stays undefined in the console
+  // In Event comment field the post value stays undefined in the console
+  // Comment input field remains the recent content after submitting it
+  // Creates a comment and the comments_count increases
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
