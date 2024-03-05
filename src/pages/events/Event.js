@@ -27,6 +27,7 @@ function Event(props) {
       category,
       eventPage,
       setEvents,
+      comments_count
   } = props;
 
   const currentUser = useCurrentUser();
@@ -162,6 +163,13 @@ function Event(props) {
           )}
           </Card.Body>      
       </Card.Body>
+      <div className="text-center">
+        <Link to={`/events/${id}`}>
+          <i className="far fa-comments" />
+        </Link>
+      {comments_count}
+      </div>
+      
     </Card>
   )
 }
