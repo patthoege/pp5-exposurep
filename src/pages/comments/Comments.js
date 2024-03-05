@@ -21,37 +21,36 @@ const Comment = (props) => {
     setPost,
     setEvent,
     setComments,
+    evPage,
   } = props;
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const [showEditForm, setShowEditForm] = useState(false);
 
-
-  // BUG handleDelete comment
-  // Deletes the comment from post and event after only being refreshed
-  // comments_count decreases live
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`);
 
-      setEvent((prevEvent) => ({
-        results: [
-          {
-            ...prevEvent.results[0],
-            comments_count: prevEvent.results[0].comments_count - 1,
-          },
-        ],
-      }));
-
-      setPost((prevPost) => ({
-        results: [
-          {
-            ...prevPost.results[0],
-            comments_count: prevPost.results[0].comments_count - 1,
-          },
-        ],
-      }));
+      if(evPage){
+        setEvent((prevEvent) => ({
+          results: [
+            {
+              ...prevEvent.results[0],
+              comments_count: prevEvent.results[0].comments_count + 1,
+            },
+          ],
+        }));
+      }else{
+        setPost((prevPost) => ({
+          results: [
+            {
+              ...prevPost.results[0],
+              comments_count: prevPost.results[0].comments_count - 1,
+            },
+          ],
+        }));
+      }
 
       setComments((prevComments) => ({
         ...prevComments,

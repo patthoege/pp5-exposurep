@@ -70,6 +70,7 @@ function EventPage() {
                   setEvent={setEvent}
                   event={id}
                   setComments={setComments}
+                  evPage
                 />
               ))}
               dataLength={comments.results.length}
