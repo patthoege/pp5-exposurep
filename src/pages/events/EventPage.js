@@ -13,6 +13,11 @@ import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import PopularProfiles from "../profiles/PopularProfiles";
 
+import Comment from "../comments/Comments";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Assets";
+import { fetchMoreData } from "../../utils/utils";
+
 function EventPage() {
   const  { id } = useParams();
   const [event, setEvent] = useState({ results: [] });
@@ -54,6 +59,27 @@ function EventPage() {
          ) : comments.results.length ? (
            "Comments"
          ) : null}
+
+         {comments.results.length ? (
+            <InfiniteScroll
+              children={comments.results.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  {...comment}
+                  setEvent={setEvent}
+                  setComments={setComments}
+                />
+              ))}
+              dataLength={comments.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            />
+          ) : currentUser ? (
+            <span>No comments yet, be the first to comment!</span>
+          ) : (
+            <span>No comments... yet</span>
+          )}
        </Container>
      </Col>
      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
