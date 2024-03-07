@@ -113,6 +113,10 @@ const SignUpForm = () => {
               </Row>
            </Container>
           <Container className="mt-3">
+            <div className="text-center mt-4 mb-4">
+                <h4 className="font-weight-bold">Join our community of ExposePX!</h4>
+                <p className="lead">Share your pictures and events, and engage with fellow photographers</p>
+            </div>
             <Link className={styles.Link} to="/signin">
               Already have an account? <span>Sign in</span>
             </Link>
