@@ -4,10 +4,6 @@
     padding-left: 40px;
     margin-bottom: 16px;
 }
-
-.SearchBar input:hover {
-    color: #64b6ac;
-}
   
 .SearchIcon {
     position: absolute;
