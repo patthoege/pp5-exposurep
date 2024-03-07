@@ -73,3 +73,50 @@ ExposePX communicates its purpose and features through intuitive design, clear n
 - Find inspiration and discover new photography opportunities through the platform.
 - Feel welcomed and encouraged to participate in community activities and discussions that the site has to offer.
 
+[Back to top](<#table-of-contents>)
+
+## User Stories
+
+- **User Stories and Issues** (<a href="https://github.com/patthoege/pp5-exposurep/issues?q=is%3Aissue+is%3Aclosed" target="_blank" rel="noopener">GitHub Issues</a>): Project tasks were organized into user stories, each corresponding to specific functionalities or improvements. These user stories were then translated into GitHub issues, providing a clear and manageable way to track progress.
+
+- **MoSCoW Prioritization**: The MoSCoW method was employed to prioritize project requirements and features based on their importance.
+
+- **GitHub Kanban Board** (<a href="https://github.com/users/patthoege/projects/4" target="_blank" rel="noopener">GitHub Project</a>): The GitHub Kanban board was leveraged to visualize and manage the project's workflow. It facilitated the organization of tasks, from backlog to completion, providing a visual representation of the project's status.
+
+[Back to top](<#table-of-contents>)
+## Design
+
+### Wireframes:
+- A separate document for the wireframes can be viewed here: 
+  - [For Desktop view](docs/WIREFRAMES.md) - to do
+  - [For Mobile view](docs/WIREFRAMES-MOBILE.md) -to do
+
+
+### Database Schema:
+This has been uploaded to the Backend README, which can be found [HERE](https://github.com/patthoege/pp5-drf-api/#database-schema)
+
+### Colour Scheme:
+
+![Colour Palette]() - to do
+
+### Typography:
+All fonts were obtained from the Google Fonts library. I chose the following fonts for the page:
+1. "Montserrat", sans-serif;
+
+## Features
+
+### Existing Features:
+
+-
+-
+-
+
+### Features Left to Implement:
+-
+-
+-
+
+
+## Testing
+
+### Manual Testing:

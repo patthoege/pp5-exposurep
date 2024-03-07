@@ -52,7 +52,7 @@ function SignInForm() {
       <spline-viewer url="https://prod.spline.design/UOR17FL-TIPiTqGW/scene.splinecode"></spline-viewer> 
       <div className={`${styles.Row} ${styles.Overlay}`}>
         <div className="text-center text-md-left d-none d-lg-block p-0 p-lg-2">
-          <p className="font-weight-bold">Dive into the World of ExposePX</p>
+          <h4 className="font-weight-bold">Dive into the World of ExposePX</h4>
         </div>
         <Col className="my-auto p-0 p-md-2" md={6}>
           <Container className="p-4">
