@@ -8,8 +8,8 @@ import Container from "react-bootstrap/Container";
 import Post from "./Post";
 import Asset from "../../components/Assets";
 
-import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
+import AssetImage from "../../styles/Asset.module.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -79,13 +79,13 @@ function PostsPage({ message, filter = "" }) {
                 next={() => fetchMoreData(posts, setPosts)}
               />
             ) : (
-              <Container className={appStyles.Content}>
-                <Asset src={NoResults} message={message} />
+              <Container>
+                <Asset  src={NoResults} message={message} />
               </Container>
             )}
           </>
         ) : (
-          <Container className={appStyles.Content}>
+          <Container className="mt-4">
             <Asset spinner />
           </Container>
         )}
