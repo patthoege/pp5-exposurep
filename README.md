@@ -45,3 +45,31 @@ The live link for **"ExposePX"** can be found [HERE]() - to do
 + [Credits](#credits "Credits")
   + [Content](#content "Content")
   + [Media](#media "Media")
+
+
+## UX
+
+#### Site Purpose:
+The purpose of ExposePX is to provide a dynamic online community for photographers, facilitating seamless interaction among users through various features such as photo sharing, liking, commenting, and following other enthusiasts. Additionally, the platform offers the opportunity to create and join photography-related events, fostering connections and collaborations within the photography community.
+
+#### Site Goal:
+The primary goal of ExposePX is to create and keep an engaging and user-friendly platform where photographers of all levels can connect, share their work, and participate in events tailored to their interests. The platform aims to provide a space where users can showcase their photography skills, gain inspiration from others, and build meaningful connections within the photography community.
+
+#### Audience:
+The target audience for ExposePX includes photography enthusiasts of all skill levels, from amateur photographers looking to improve their skills to professional photographers seeking to showcase their work and network with peers.
+
+#### Communication:
+ExposePX communicates its purpose and features through intuitive design, clear navigation, and informative content. The user interface is designed to be visually appealing and easy to navigate, with clear calls-to-action guiding users to key features such as posting photos, joining events, and interacting with other users. Additionally, the platform utilizes clear and concise messaging to inform users about upcoming events, community updates, and any relevant notifications to enhance user engagement and participation.
+
+#### Current User Goals:
+- Share photos and receive feedback from the community.
+- Discover and participate in photography events.
+- Connect with fellow photographers and build a network of like-minded individuals.
+- Stay updated on community news, events, and trends in the photography scene.
+
+#### New User Goals:
+- Easily sign up and create a profile to start engaging with the community.
+- Quickly understand the platform's features and how to navigate them.
+- Find inspiration and discover new photography opportunities through the platform.
+- Feel welcomed and encouraged to participate in community activities and discussions that the site has to offer.
+
