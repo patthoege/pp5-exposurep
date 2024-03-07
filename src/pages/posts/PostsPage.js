@@ -9,7 +9,6 @@ import Post from "./Post";
 import Asset from "../../components/Assets";
 
 import styles from "../../styles/PostsPage.module.css";
-import AssetImage from "../../styles/Asset.module.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 
