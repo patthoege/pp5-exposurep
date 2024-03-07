@@ -59,134 +59,140 @@ function CreateEventForm() {
     };
 
     return (
-        <Container className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group>
-                    <Form.Label>Title</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter title"
-                        name="title"
-                        value={title}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                {errors?.title?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                ))}
-                <Form.Group>
-                    <Form.Label>Content</Form.Label>
-                    <Form.Control
-                        as="textarea"
-                        rows={3}
-                        placeholder="Enter content"
-                        name="content"
-                        value={content}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                {errors?.content?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                ))}
-                <Form.Group>
-                    <Form.Label>Event Link</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter event link"
-                        name="event_link"
-                        value={event_link}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                {errors?.event_link?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                ))}
-                <Form.Group>
-                    <Form.Label>Category</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter category"
-                        name="category"
-                        value={category}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                {errors?.category?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                ))}
+        <>
+            <div className="text-center mt-4 mb-4">
+                <h5 className="font-weight-bold">Share your passion for photography with the community!</h5>
+                <p className="lead">Fill in the details below and invite others to join in</p>
+            </div>
+            <Container className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group>
+                        <Form.Label>Title</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter title"
+                            name="title"
+                            value={title}
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
+                    {errors?.title?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                            {message}
+                        </Alert>
+                    ))}
+                    <Form.Group>
+                        <Form.Label>Content</Form.Label>
+                        <Form.Control
+                            as="textarea"
+                            rows={3}
+                            placeholder="Enter content"
+                            name="content"
+                            value={content}
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
+                    {errors?.content?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                            {message}
+                        </Alert>
+                    ))}
+                    <Form.Group>
+                        <Form.Label>Event Link</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter event link"
+                            name="event_link"
+                            value={event_link}
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
+                    {errors?.event_link?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                            {message}
+                        </Alert>
+                    ))}
+                    <Form.Group>
+                        <Form.Label>Category</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter category"
+                            name="category"
+                            value={category}
+                            onChange={handleChange}
+                        />
+                    </Form.Group>
+                    {errors?.category?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                            {message}
+                        </Alert>
+                    ))}
 
-                <Row>
-                    <Col>
-                        <Form.Group>
-                            <Form.Label>Date</Form.Label>
-                            <Form.Control
-                                type="date"
-                                placeholder="Enter date"
-                                name="date"
-                                value={date}
-                                onChange={handleChange}
-                            />
-                        </Form.Group>
-                        {errors?.date?.map((message, idx) => (
-                          <Alert variant="warning" key={idx}>
-                              {message}
-                          </Alert>
-                        ))}
-                    </Col>
-                    <Col>
-                        <Form.Group>
-                            <Form.Label>Time</Form.Label>
-                            <Form.Control
-                                type="time"
-                                placeholder="Enter time"
-                                name="time"
-                                value={time}
-                                onChange={handleChange}
-                            />
-                        </Form.Group>
-                        {errors?.time?.map((message, idx) => (
-                          <Alert variant="warning" key={idx}>
-                              {message}
-                          </Alert>
-                        ))}
-                    </Col>
-                    <Col>
-                        <Form.Group>
-                            <Form.Label>Place</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Enter place"
-                                name="place"
-                                value={place}
-                                onChange={handleChange}
-                            />
-                        </Form.Group>
-                        {errors?.place?.map((message, idx) => (
-                          <Alert variant="warning" key={idx}>
-                              {message}
-                          </Alert>
-                        ))}
-                    </Col>
-                </Row>
-                <Button
-                  className={`${btnStyles.Button} ${btnStyles.Blue}`}
-                  onClick={() => history.goBack()}
-                >
-                  cancel
-                </Button>
-                <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-                  create
-                </Button>
-            </Form>
-        </Container>
+                    <Row>
+                        <Col>
+                            <Form.Group>
+                                <Form.Label>Date</Form.Label>
+                                <Form.Control
+                                    type="date"
+                                    placeholder="Enter date"
+                                    name="date"
+                                    value={date}
+                                    onChange={handleChange}
+                                />
+                            </Form.Group>
+                            {errors?.date?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                            ))}
+                        </Col>
+                        <Col>
+                            <Form.Group>
+                                <Form.Label>Time</Form.Label>
+                                <Form.Control
+                                    type="time"
+                                    placeholder="Enter time"
+                                    name="time"
+                                    value={time}
+                                    onChange={handleChange}
+                                />
+                            </Form.Group>
+                            {errors?.time?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                            ))}
+                        </Col>
+                        <Col>
+                            <Form.Group>
+                                <Form.Label>Place</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter place"
+                                    name="place"
+                                    value={place}
+                                    onChange={handleChange}
+                                />
+                            </Form.Group>
+                            {errors?.place?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                            ))}
+                        </Col>
+                    </Row>
+                    <Button
+                    className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                    onClick={() => history.goBack()}
+                    >
+                    cancel
+                    </Button>
+                    <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+                    create
+                    </Button>
+                </Form>
+            </Container>
+        </>
     );
 }
 
