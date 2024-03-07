@@ -18,9 +18,9 @@ import { useProfileData, useSetProfileData, } from "../../contexts/ProfileDataCo
 import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
-import Post from "../posts/Post";
 import NoPosts from "../../assets/no-posts.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import ProfilePost from "./ProfilePost";
 
 
 function ProfilePage() {
@@ -113,24 +113,29 @@ function ProfilePage() {
   const mainProfilePosts = (
     <>
       <hr />
-      <p className="text-center">Profile owner's posts</p>
+      <p className="text-center">Posts</p>
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll 
-            children={profilePosts.results.map((post) => (
-                <Post key={post.id} {...post} setPosts={setProfilePosts} />
+          dataLength={profilePosts.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!profilePosts.next}
+          next={() => fetchMoreData(profilePosts, setProfilePosts)}
+        >
+          <Row noGutters >
+            {profilePosts.results.map((post) => (
+              <Col key={post.id} lg={4} md={4} xs={6}>
+                <ProfilePost {...post} setPosts={setProfilePosts} />
+              </Col>
             ))}
-            dataLength={profilePosts.results.length}
-            loader={<Asset spinner />}
-            hasMore={!!profilePosts.next}
-            next={() => fetchMoreData(profilePosts, setProfilePosts)}
+          </Row>
+        </InfiniteScroll>
+      ) : (
+        <Asset
+          src={NoPosts}
+          message={`${profile?.owner} hasn't posted yet`}
         />
-        ) : (
-            <Asset
-            src={NoPosts}
-            message={`${profile?.owner} hasn't posted yet`}
-            />
-        )}
+      )}
     </>
   );
 
