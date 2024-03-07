@@ -21,7 +21,7 @@ function EventsPage({ message, filter = "" }) {
   const [events, setEvents] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     const fetchEvents = async () => {
