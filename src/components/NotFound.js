@@ -1,6 +1,5 @@
 import React from "react";
-import NoResults from "../assets/no-results.png";
-// import styles from "../styles/NotFound.module.css";
+import NoPage from "../assets/404-page.png";
 import Asset from "./Assets";
 
 
@@ -8,7 +7,7 @@ const NotFound = () => {
     return (
         <div className="mt-5">
           <Asset
-            src={NoResults}
+            src={NoPage}
             message={`Sorry, the page you're looking for doesn't exist`}
           />
         </div>
