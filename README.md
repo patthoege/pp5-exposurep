@@ -88,8 +88,8 @@ ExposePX communicates its purpose and features through intuitive design, clear n
 
 ### Wireframes:
 - A separate document for the wireframes can be viewed here: 
-  - [For Desktop view](docs/WIREFRAMES.md) - to do
-  - [For Mobile view](docs/WIREFRAMES-MOBILE.md) -to do
+  - [For Desktop view](docs/readme/wireframes/wireframe-desktop.pdf) 
+  - [For Mobile view](docs/readme/wireframes/wireframe-mobile.pdf)
 
 
 ### Database Schema:
