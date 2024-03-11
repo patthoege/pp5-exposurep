@@ -1,5 +1,5 @@
 import { axiosReq } from "../api/axiosDefaults";
-
+import jwtDecode from 'jwt-decode';
 
 // From Moments WalkThrough Project
 // Can be reused with any paginated data like comments or profiles
@@ -54,4 +54,21 @@ export const unfollowHelper = (profile, clickedProfile) => {
       { ...profile, following_count: profile.following_count - 1 }
     : 
       profile;
+};
+
+/**
+ * Following 3 functions address console errors
+ * due to refresh token.
+ */
+export const setTokenTimestamp = (data) => {
+  const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
+  localStorage.setItem('refreshTokenTimestamp', refreshTokenTimestamp);
+};
+
+export const shouldRefreshToken = () => {
+  return !!localStorage.getItem('refreshTokenTimestamp');
+};
+
+export const removeTokenTimestamp = () => {
+  localStorage.removeItem('refreshTokenTimestamp');
 };

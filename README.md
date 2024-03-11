@@ -40,7 +40,7 @@ The live link for **"ExposePX"** can be found [HERE]() - to do
 + [Technologies Used](#technologies-used "Technologies Used")
   + [Main Languages Used](#main-languages-used "Main Languages Used")
   + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
-+ [Components](#oomponents "Components")
++ [Components](#components "Components")
 + [Deployment](#deployment "Deployment")
 + [Credits](#credits "Credits")
   + [Content](#content "Content")
@@ -112,7 +112,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 -
 
 ### Features Left to Implement:
--
+- 
 -
 -
 
