@@ -19,6 +19,7 @@ import EventPage from "./pages/events/EventPage";
 import EventsPage from "./pages/events/EventsPage";
 import EventEditForm from "./pages/events/EventEditForm";
 import NotFound from "./components/NotFound";
+import About from "./pages/about";
 
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
               )}
             />
             <Route exact path="/events/:id/edit" render={() => <EventEditForm /> } />
+            <Route exact path="/about/" render={() => <About /> } />
             <Route render={() => <NotFound />} />
           </Switch>
         </Container>
