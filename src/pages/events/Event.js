@@ -1,12 +1,17 @@
-import React from 'react'
+import React from "react"
+
 import styles from "../../styles/Event.module.css";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { Link } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import Avatar from "../../components/Avatar";
-import { axiosRes } from '../../api/axiosDefaults';
-import { MoreDropdown } from '../../components/MoreDropdown';
+
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
+import { axiosRes } from "../../api/axiosDefaults";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 
 function Event(props) {
