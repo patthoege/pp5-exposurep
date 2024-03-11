@@ -34,6 +34,8 @@ const NavBar = () => {
     <NavLink 
       className={styles.NavLink}
       activeClassName={styles.Active}
+      aria-label="add post"
+      rel="noreferrer"
       to="/posts/create">
       <i className="fas fa-plus-square"></i> Create
     </NavLink>
@@ -43,6 +45,8 @@ const NavBar = () => {
     <NavLink 
       className={styles.NavLink}
       activeClassName={styles.Active}
+      aria-label="add event"
+      rel="noreferrer"
       to="/events/create">
       <i className="fa-solid fa-calendar-plus"></i> AddEvent
     </NavLink>
@@ -53,29 +57,39 @@ const NavBar = () => {
     <NavLink 
       className={styles.NavLink}
       activeClassName={styles.Active}
+      aria-label="feed"
+      rel="noreferrer"
       to="/feed">
       <i className="fas fa-stream"></i> Feed
     </NavLink>
     <NavLink 
       className={styles.NavLink}
       activeClassName={styles.Active}
+      aria-label="likes"
+      rel="noreferrer"
       to="/liked">
       <i className="fas fa-heart"></i> Liked
     </NavLink>
     <NavLink 
       className={styles.NavLink}
       activeClassName={styles.Active}
+      aria-label="saved"
+      rel="noreferrer"
       to="/saved">
       <i className="fas fa-bookmark"></i> Saved
     </NavLink>
     <NavLink 
       className={styles.NavLink} 
+      aria-label="sign out"
+      rel="noreferrer"
       to="/" 
       onClick={handleSignOut}>
       <i className="fas fa-sign-out-alt"></i> SignOut
       </NavLink>
     <NavLink
       className={styles.NavLink}
+      aria-label="profile"
+      rel="noreferrer"
       to={`/profiles/${currentUser?.profile_id}`}>
       <Avatar src={currentUser?.profile_image} height={40} />
     </NavLink>
@@ -87,12 +101,16 @@ const NavBar = () => {
     <NavLink 
       className={styles.NavLink}
       activeClassName={styles.Active}
+      aria-label="sign in"
+      rel="noreferrer"
       to="/signin">
       <i className="fas fa-sign-in-alt"></i> Sign In
     </NavLink>
     <NavLink 
       className={styles.NavLink}
       activeClassName={styles.Active}
+      aria-label="sign up"
+      rel="noreferrer"
       to="/signup">
       <i className="fas fa-user-plus"></i> Sign Up
     </NavLink>
@@ -119,14 +137,26 @@ const NavBar = () => {
               exact
               className={styles.NavLink}
               activeClassName={styles.Active}
+              aria-label="home page"
+              rel="noreferrer"
               to="/">
               <i className="fas fa-home"></i> Home
             </NavLink>
             <NavLink 
               className={styles.NavLink}
               activeClassName={styles.Active}
+              aria-label="events page"
+              rel="noreferrer"
               to="/events">
               <i className="fa-solid fa-location-crosshairs"></i> Events
+            </NavLink>
+            <NavLink
+              className={styles.NavLink}
+              activeClassName={styles.Active}
+              aria-label="about page"
+              rel="noreferrer"
+              to="/about">
+              <i class="fa-brands fa-readme"></i> About
             </NavLink>
             
             {currentUser ? loggedInIcons : loggedOutIcons}
