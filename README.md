@@ -1,4 +1,4 @@
-<h1 align="center">ExposePX API</h1>
+<h1 align="center">ExposePX</h1>
 
 **ExposePX** offers a vibrant online community for photographers, where users can seamlessly interact with each other through various features such as posting pictures, liking, commenting, and following fellow enthusiasts. Additionally, users have the ability to create and join events tailored to the photography scene, fostering connections and collaborations within the art shooting community. The platform also enables users to bookmark events of interest for easy access.
 
@@ -106,16 +106,124 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 ## Features
 
 ### Existing Features:
+## 1. NavBar
+  Includes a responsive navigation bar with the following elements:
+  - **Logo:** ExposePX logo with a link to the home page.
+  - **Navigation Links:** Home, Events, About, SignIn and SignUp (for non-authenticated users). A Create Post, Add Event, Liked, Saved, SignOut and Profile (for authenticated users).
 
--
--
--
+    <details><summary><b> Navbar Non-user Image</b></summary>
+    
+    ![Navbar Non-user Image](docs/readme/images/navbar-visiter.png)
+    </details><br />
 
-### Features Left to Implement:
-- 
--
--
+    <details><summary><b>Navbar User Image</b></summary>
 
+    ![Navbar User Image](docs/readme/images/navbar-user.png)
+    </details><br />
+## 2. About Page
+  The About page serves as a concise guide to ExposePX, detailing its purpose and functionalities. It informs users about the website's features, encourages sign-ups, and provides connection through social media links. Additionally, it includes copyright information.
+
+  <details><summary><b>About Us Image</b></summary>
+
+  ![About Us Image](docs/readme/images/about.png)
+  </details><br />
+
+## 3. Landing Page
+  Exhibits recent posts by platform users, featuring their avatar images, posting dates, locations, featured images, titles, descriptions, and counts of likes and comments. Additionally, on the right side of the screen, displays the most followed profiles, accompanied by a "Follow" button for users to easily engage with them. Users can utilize a search bar to find posts by username, title or location.
+
+  <details><summary><b>Landing Page Image</b></summary>
+
+  ![Landing Page Image](docs/readme/images/landing-page.png)
+  </details><br />
+
+## 4. Create Post Page
+  Provides for authenticated users with a form to upload images and input details such as title, location, and description for their posts.
+
+  <details><summary><b>Create Post Page Image</b></summary>
+
+  ![Create Post Page Image](docs/readme/images/post-form.png)
+  </details><br />
+
+## 5. Add Event Page
+  Allows authenticated users to create captivating event listings and invite the community to participate. By filling in event details such as title, content, event link, category, date, time, and place.
+
+  <details><summary><b>Add Event Page Image</b></summary>
+
+  ![Add Event Page Image](docs/readme/images/event-form.png)
+  </details><br />
+
+## 6. Event List Page
+  Displays recent events by platform users, featuring their avatar images, posting dates, locations, titles, category, descriptions, event link, date-time, and saved and comment counts.
+
+  <details><summary><b>Events Page Image</b></summary>
+
+  ![Events Page Image](docs/readme/images/event.png)
+  </details><br />
+
+## 7. Liked Page
+  Enables users to conveniently access a list of recently liked posts, helping them keep track of their favorite content.
+
+  <details><summary><b>Liked Page Image</b></summary>
+
+  ![Liked Page Image](docs/readme/images/liked.png)
+  </details><br />
+
+## 8. Saved Page
+  Allows users to conveniently access a list of recently saved events, helping them manage and keep track of their interests and plans.
+
+  <details><summary><b>Saved Page Image</b></summary>
+
+  ![Saved Page Image](docs/readme/images/saved.png)
+  </details><br />
+
+## 9. Single Post & Event Pages
+  These pages offer detailed information about a specific post or event, providing users with the functionality to leave comments on the existing content.
+
+  <details><summary><b>Single Post Page Image</b></summary>
+
+  ![Single Post Page Image](docs/readme/images/single-post.png)
+  </details><br />
+
+  <details><summary><b>Single Event Page Image</b></summary>
+
+  ![Single Event Page Image](docs/readme/images/single-event.png)
+  </details><br />
+
+## 10. SignIn & SignUp Pages
+  
+
+  <details><summary><b>SignIn Page Image</b></summary>
+
+  ![SignIn Page Image](docs/readme/images/signin.png)
+  </details><br />
+
+  <details><summary><b>SignUp Page Image</b></summary>
+
+  ![SignUp Page Image](docs/readme/images/signup.png)
+  </details><br />
+
+## 11. No Results & 404 Pages
+  
+
+  <details><summary><b>No Results Page Image</b></summary>
+
+  ![No Results Page Image](docs/readme/images/no-results.png)
+  </details><br />
+
+  <details><summary><b>404 Not Found Page Image</b></summary>
+
+  ![404 Not Found Page Image](docs/readme/images/not-found.png)
+  </details><br />
+
+[Back to top](<#table-of-contents>)
+
+### Future Features Left to Implement:
+- Implement a private messaging system that allows users to engage in one-on-one conversations or group discussions. 
+- Integrating Google Maps into the events and post sections, providing users with comprehensive location details, allowing them to visualize where a photo was taken or where an event is scheduled to take place.
+- Implement like and reply comments to enable users to engage in specific conversations within a thread. 
+
+
+[Back to top](<#table-of-contents>)
 
 ## Testing
 
