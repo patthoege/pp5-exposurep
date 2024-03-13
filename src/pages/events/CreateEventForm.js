@@ -181,15 +181,20 @@ function CreateEventForm() {
                             ))}
                         </Col>
                     </Row>
-                    <Button
-                    className={`${btnStyles.Button} ${btnStyles.Blue}`}
-                    onClick={() => history.goBack()}
-                    >
-                    cancel
-                    </Button>
-                    <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-                    create
-                    </Button>
+                    <div className="d-flex justify-content-center m-2">
+                        <Button
+                            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                            onClick={() => history.goBack()}
+                            >
+                            cancel
+                        </Button>
+                        <Button 
+                            className={`${btnStyles.Button} ${btnStyles.Blue}`} 
+                            type="submit"
+                            >
+                            create
+                        </Button>
+                    </div>
                 </Form>
             </Container>
         </>

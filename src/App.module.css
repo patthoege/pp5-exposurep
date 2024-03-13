@@ -1,6 +1,6 @@
 .App {
   font-family: "Montserrat", sans-serif;
-  background: linear-gradient(to top,  #64B6AC, #000000, #000000);
+  background-color: #0c0c0c;
   color: #ffffff;
   min-height: 100vh;
 }
