@@ -4,7 +4,6 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-import appStyles from "../../App.module.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import Event from "./Event";
@@ -47,7 +46,7 @@ function EventPage() {
      <Col className="py-2 p-0 p-lg-2" lg={8}>
       <PopularProfiles mobile />
        <Event {...event.results[0]} setEvents={setEvent} eventPage />
-       <Container className={appStyles.Content}>
+       <Container>
          {currentUser ? (
            <CommentCreateForm
              profile_id={currentUser.profile_id}

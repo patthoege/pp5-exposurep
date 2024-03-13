@@ -17,10 +17,6 @@
     color: #64b6ac;
 }
 
-.OnHover {
-    color: #F4743B;
-}
-
 .OnHover:hover {
     color: #64b6ac;
     text-decoration: none;
