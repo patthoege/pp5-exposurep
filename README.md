@@ -97,7 +97,7 @@ This has been uploaded to the Backend README, which can be found [HERE](https://
 
 ### Colour Scheme:
 
-![Colour Palette]() - to do
+![Colour Palette](docs/readme/images/palette.png)
 
 ### Typography:
 All fonts were obtained from the Google Fonts library. I chose the following fonts for the page:
@@ -157,7 +157,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 
   <details><summary><b>Events Page Image</b></summary>
 
-  ![Events Page Image](docs/readme/images/event.png)
+  ![Events Page Image](docs/readme/images/events.png)
   </details><br />
 
 ## 7. Liked Page
