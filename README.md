@@ -226,5 +226,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 [Back to top](<#table-of-contents>)
 
 ## Testing
+This project has been continuously tested throughout the development stages
 
 ### Manual Testing:
+A separate document for testing can be viewed here: [TESTING.md](docs/readme/TESTING.md)
