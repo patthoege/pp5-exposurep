@@ -1,4 +1,5 @@
 <h1 align="center">ExposePX</h1>
+<div align="center"><img src="docs/readme/images/amiresponsive.png"></div>
 
 **ExposePX** offers a vibrant online community for photographers, where users can seamlessly interact with each other through various features such as posting pictures, liking, commenting, and following fellow enthusiasts. Additionally, users have the ability to create and join events tailored to the photography scene, fostering connections and collaborations within the art shooting community. The platform also enables users to bookmark events of interest for easy access.
 
@@ -11,7 +12,6 @@ This project was built as my final Advanced Frontend Portfolio submission for th
 
 #### DEPLOYED FRONTEND RENDER [LINK - LIVE SITE]() - to do
 
-![Site view across devices]() - to do
 
 The live link for **"ExposePX"** can be found [HERE]() - to do
 
@@ -35,11 +35,13 @@ The live link for **"ExposePX"** can be found [HERE]() - to do
   + [Existing Features](#existing-features "Existing Features")
   + [C.R.U.D](#crud "C.R.U.D")
 + [Testing](#testing "Testing")
+  + [Manual Testing](#manual-testing "Manual Testing")
   + [Validator Testing](#validator-testing "Validator Testing")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
 + [Technologies Used](#technologies-used "Technologies Used")
   + [Main Languages Used](#main-languages-used "Main Languages Used")
   + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
+  + [Databases Platform and Cloud Storage](#databases-platform-and-cloud-storage "Databases Platform and Cloud Storage")
 + [Components](#components "Components")
 + [Deployment](#deployment "Deployment")
 + [Credits](#credits "Credits")
@@ -230,3 +232,98 @@ This project has been continuously tested throughout the development stages
 
 ### Manual Testing:
 A separate document for testing can be viewed here: [TESTING.md](docs/readme/TESTING.md)
+
+### Validator Testing:
+1. CSS files pass through the [W3C Jigsaw](https://jigsaw.w3.org/css-validator/) validator with no issues found.
+ 
+      <details><summary><b>CSS Validator Image</b></summary>
+
+      ![CSS Validator Image](docs/readme/images)
+      </details><br />
+
+2. All HTML files passed through the [W3C Markup Validator](https://validator.w3.org/) with no errors.
+
+      <details><summary><b>MarkUp Validator Image</b></summary>
+
+      ![MarkUp Validator Image](docs/readme/images)
+      </details><br />
+
+2. All JSX code pass through `npx eslint src/**/*.js` [ESLint](https://eslint.org/). All `console.log(err);` have been left in place and commented out, as it was suggested in the **"Moments" Walkthrough Project**.
+
+      <details><summary><b>ESLint Terminal Results Image</b></summary>
+
+      ![ESLint Validator Image](docs/readme/images/eslint.png)
+      </details><br />
+
+3. Lighthouse
+      <details><summary><b>Lighthouse Validator Image</b></summary>
+
+      ![Lighthouse Validator Image](docs/readme/images)
+      </details><br />
+
+### Unfixed Bugs:
+-
+
+[Back to top](<#table-of-contents>)
+
+## Technologies Used
+
+### Main Languages Used
+- HTML5
+- CSS3
+- Javascript
+- Python
+- SQL - Postgres
+
+### Frameworks, Libraries & Programs Used
+- **GitPod:** Served as the primary workspace for project development, facilitating the creation and modification of JSX/CSS files before repository submission on GitHub.
+- **GitHub:** Used as the hosting platform to store the project repository for version control.
+- **Google Fonts:** Utilized for the site fonts.
+- **Font Awesome:** Integrated to incorporate stylish icons into social links within the footer and navigation sections.
+- **Balsamiq:** Was used to create mockups of the project prior to starting.
+- **Am I Responsive?:** Ensured the responsiveness of the project across various devices, ensuring optimal user experience regardless of screen size or resolution.
+- **Coolors.co:** Used to create color palettes tailored to the project's website, ensuring harmonious design .
+- **Favicon:** To provide the code & image for the icon in the tab bar.
+- **Canva:** Utilized for creating image icons, such as uploading an image, no results found and 404 Page Not Found.
+- **ChatGPT:** Leveraged for creating and refining content for the project and its accompanying documentation, ensuring clarity and coherence in communication.
+- **Spline Design:** Used to add 3D objects for signin/up pages.
+- **Django:** Used to build the backend database that serves as an API for the front-end project.
+- **React-Bootstrap:** The styling library that has aided to the layout of the site, and which was introduced to us during the course of the program.
+- **Drawio:** An diagram software tool to design Database schema so that we can visualise the relationships between models.
+- **ReactJS:** To build the components that would collectively form the front-end application.
+- **jwt-decode:** is an open standard (RFC 7519) for securely transmitting information between parties as JSON object.
+- **NPM JS** - The npm registry website used for information on npm libraries.
+- **react-router-dom:** enables you to implement dynamic routing in a web app.
+- **react-infinite-scroll-component:** a technique that automatically adds the next page as the user scrolls down through content, more content is loaded.
+- **Popper:**  is used for positioning and aligning pop-up elements, such as dropdown menus, tooltips, or popovers, relative to their reference elements. 
+
+### Databases Platform and Cloud Storage
+- **ElephantSQL Postgres:** database service provided by ElephantSQL for data storage.
+- **Heroku Postgres:** SQL database service provided directly by Heroku for storing data.
+- **Cloudinary:** to store images and static files in production.
+- **Heroku:** to deploy and run the application in production.
+
+
+[Back to top](<#table-of-contents>)
+
+## Components
+Several components have been implemented within this project that have been reused throughout the project:
+
+- **axiosDefault.js:** for ease of communication with the backend API.
+- **Asset.js:** dynamically renders a loading spinner (spinner), an image (src), and a message (message) throughout the site.
+- **MoreDropdown.js:** to allow users to edit/delete their Events, Posts and comments.
+- **NavBar.js:**  renders a navigation bar with various icons and links based on the user's authentication status. The navigation bar also contains sign-in and sign-up links for logged-out users and profile-related links for logged-in users. Additionally, it handles sign-out functionality.
+- **NotFound.js:**  renders a custom 404 error page when a user navigates to a non-existent page.
+#### Contexts
+- **CurrentUserContext.js:** Provides hooks (useCurrentUser and useSetCurrentUser) for accessing and updating the current user's data. Confirm users logged-in status to determine what functionality is - available to the user.
+- **ProfileDataContext.js:** It provides hooks (useProfileData and useSetProfileData) for accessing and updating profile data, respectively. Offering the un/follow ability to other users across PopProf & ProfPage components.
+####  Hooks
+- **useClickOutsideToggle.js:**  manages the state of an element's visibility based on clicks outside of that element.
+- **useRedirect.js:** redirects users based on their authentication status. It sends a POST request to refresh tokens and redirects to the home page ("/") if logged in or logged out.
+
+#### Utils
+- **utils.js:** contains helper functions for managing pagination (fetchMoreData), updating follower counts and following status (followHelper and unfollowHelper), and handling authentication tokens (setTokenTimestamp, shouldRefreshToken, removeTokenTimestamp). These functions streamline data management and authentication tasks within the Moments WalkThrough Project.
+
+
+## Deployment
+## Credits
