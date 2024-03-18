@@ -39,7 +39,7 @@ function EventEditForm() {
                 title, content, date, time, place, event_link, category
             }) : history.push("/");
           } catch (err) {
-            console.log(err);
+            // console.log(err);
           }
         };
     
@@ -68,9 +68,9 @@ function EventEditForm() {
       try {
         await axiosReq.put(`/events/${id}`, formData);
         history.push(`/events/${id}`);
-        console.log(formData);
+        // console.log(formData);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
         if (err.response?.status !== 401) {
           setErrors(err.response?.data);
         }

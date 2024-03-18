@@ -32,7 +32,7 @@ const ProfilePost = ({
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -48,7 +48,7 @@ const ProfilePost = ({
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
