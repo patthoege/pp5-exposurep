@@ -13,7 +13,7 @@ This project was built as my final Advanced Frontend Portfolio submission for th
 #### DEPLOYED FRONTEND RENDER [LINK - LIVE SITE]() - to do
 
 
-The live link for **"ExposePX"** can be found [HERE]() - to do
+The live link for **"ExposePX"** can be found [HERE](https://exposurepx-e2816574e586.herokuapp.com/)
 
 ## Table of Contents
 + [UX](#ux "UX")
@@ -295,7 +295,6 @@ Automated tests for the NavBar were run on the project using the React Testing L
 - **Favicon:** To provide the code & image for the icon in the tab bar.
 - **Canva:** Utilized for creating image icons, such as uploading an image, no results found and 404 Page Not Found.
 - **ChatGPT:** Leveraged for creating and refining content for the project and its accompanying documentation, ensuring clarity and coherence in communication.
-- **Spline Design:** Used to add 3D objects for signin/up pages.
 - **Django:** Used to build the backend database that serves as an API for the front-end project.
 - **React-Bootstrap:** The styling library that has aided to the layout of the site, and which was introduced to us during the course of the program.
 - **Drawio:** An diagram software tool to design Database schema so that we can visualise the relationships between models.

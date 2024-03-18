@@ -47,86 +47,85 @@ const SignUpForm = () => {
 
   return (
     <div className={styles.FullScreen}>
-      <spline-viewer url="https://prod.spline.design/UOR17FL-TIPiTqGW/scene.splinecode"></spline-viewer> 
       <div className={`${styles.Row} ${styles.Overlay}`}>
+        <Col className="text-center text-md-left ml-3 d-none d-lg-block p-0 p-lg-2 ">
+          <div>
+            <h4 className="font-weight-bold">Join our community of ExposePX!</h4>
+            <p className="lead">Share your pictures and events, and engage with fellow photographers</p>
+          </div>
+        </Col>
         <Col className="my-auto p-0 p-md-2" md={6}>
-          <Container className="p-4">
-            <Row className="justify-content-center">
-                <Col xs={12} sm={10} md={8} lg={6}>
-                  <h1 className={styles.Header}>sign up</h1>
-                  <Form onSubmit={handleSubmit}> 
-                  <Form.Group controlId="username">
-                        <Form.Label className="d-none">Username</Form.Label>
+          <Row className="justify-content-center">
+            <Col xs={10} sm={10} md={8} lg={8}>
+              <Container className={`${styles.Form} p-4 `}>
+                <h1 className={styles.Header}>sign up</h1>
+                <Form onSubmit={handleSubmit}> 
+                <Form.Group controlId="username">
+                  <Form.Label className="d-none">Username</Form.Label>
+                  <Form.Control 
+                    className={styles.Input}
+                    type="text" 
+                    placeholder="Username" 
+                    name="username"
+                    value={username}
+                    onChange={handleChange}
+                  />
+                </Form.Group>
+                {errors.username?.map((message, idx) => (
+                  <Alert variant="warning" key={idx}>
+                    {message}
+                  </Alert>
+                ))}
+                            
+                <Form.Group controlId="formBasicPassword1">
+                  <Form.Label className="d-none">Password</Form.Label>
                         <Form.Control 
-                          className={styles.Input}
-                          type="text" 
-                          placeholder="Username" 
-                          name="username"
-                          value={username}
-                          onChange={handleChange}
-                        />
-                      </Form.Group>
-                      {errors.username?.map((message, idx) => (
-                        <Alert variant="warning" key={idx}>
-                          {message}
-                        </Alert>
-                      ))}
-                      
-                    <Form.Group controlId="formBasicPassword1">
-                      <Form.Label className="d-none">Password</Form.Label>
-                            <Form.Control 
-                        className={styles.Input}
-                        type="password" 
-                        placeholder="Password" 
-                        name="password1" 
-                        value={password1}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-                    {errors.password1?.map((message, idx) => (
-                      <Alert key={idx} variant="warning">
-                        {message}
-                      </Alert>
-                    ))}
+                    className={styles.Input}
+                    type="password" 
+                    placeholder="Password" 
+                    name="password1" 
+                    value={password1}
+                    onChange={handleChange}
+                  />
+                </Form.Group>
+                {errors.password1?.map((message, idx) => (
+                  <Alert key={idx} variant="warning">
+                    {message}
+                  </Alert>
+                ))}
 
-                    <Form.Group controlId="formBasicPassword2">
-                      <Form.Label className="d-none">Confirm password</Form.Label>
-                      <Form.Control 
-                          className={styles.Input}
-                          type="password" 
-                          placeholder="Confirm password" 
-                          name="password2" 
-                          value={password2}
-                          onChange={handleChange}
-                      />
-                    </Form.Group>
-                    {errors.password2?.map((message, idx) => (
-                      <Alert key={idx} variant="warning">
-                        {message}
-                      </Alert>
-                    ))}
+                <Form.Group controlId="formBasicPassword2">
+                  <Form.Label className="d-none">Confirm password</Form.Label>
+                  <Form.Control 
+                      className={styles.Input}
+                      type="password" 
+                      placeholder="Confirm password" 
+                      name="password2" 
+                      value={password2}
+                       onChange={handleChange}
+                  />
+                </Form.Group>
+                {errors.password2?.map((message, idx) => (
+                  <Alert key={idx} variant="warning">
+                    {message}
+                  </Alert>
+                ))}
 
-                    <Button className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} type="submit">
-                        Sign Up
-                    </Button>
-                    {errors.non_field_errors?.map((message, idx) => (
-                      <Alert key={idx} variant="warning" className="mt-2">
-                        {message}
-                      </Alert>
-                    ))}
-                  </Form> 
-                </Col>
-              </Row>
-           </Container>
-          <Container className="mt-3">
-            <div className="text-center mt-4 mb-4">
-                <h4 className="font-weight-bold">Join our community of ExposePX!</h4>
-                <p className="lead">Share your pictures and events, and engage with fellow photographers</p>
-            </div>
-            <Link className={styles.Link} to="/signin">
-              Already have an account? <span>Sign in</span>
-            </Link>
-          </Container>
+                  <Button className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} type="submit">
+                      Sign Up
+                  </Button>
+                  {errors.non_field_errors?.map((message, idx) => (
+                    <Alert key={idx} variant="warning" className="mt-2">
+                      {message}
+                    </Alert>
+                  ))}
+                </Form> 
+                <Link className={`${styles.Link} mt-3`} to="/signin">
+                  Already have an account? <span>Sign in</span>
+                </Link>          
+              </Container>
+            </Col>
+          </Row>
         </Col>
       </div>
     </div>
