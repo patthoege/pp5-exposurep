@@ -36,6 +36,7 @@ The live link for **"ExposePX"** can be found [HERE]() - to do
   + [C.R.U.D](#crud "C.R.U.D")
 + [Testing](#testing "Testing")
   + [Manual Testing](#manual-testing "Manual Testing")
+  + [Automated Testing](#automated-testing "Automated Testing")
   + [Validator Testing](#validator-testing "Validator Testing")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
 + [Technologies Used](#technologies-used "Technologies Used")
@@ -232,6 +233,14 @@ This project has been continuously tested throughout the development stages
 
 ### Manual Testing:
 A separate document for testing can be viewed here: [TESTING.md](docs/readme/TESTING.md)
+
+### Automated Testing
+Automated tests for the NavBar were run on the project using the React Testing Library, following the approach demonstrated in the Moments Walkthrough Project.
+
+<details><summary><b>React Library Test NavBar Image</b></summary>
+
+![React Library Test NavBar Image](docs/readme/images/navbartest.png)
+</details><br />
 
 ### Validator Testing:
 1. CSS files pass through the [W3C Jigsaw](https://jigsaw.w3.org/css-validator/) validator with no issues found.
