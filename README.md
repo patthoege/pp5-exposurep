@@ -278,18 +278,18 @@ Automated tests for the NavBar were run on the project using the React Testing L
 </details><br />
 
 ### Validator Testing:
-1. CSS files pass through the [W3C Jigsaw](https://jigsaw.w3.org/css-validator/) validator with no issues found.
+1. CSS files pass through the [W3C Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fexposurepx-e2816574e586.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=es) validator with no issues found.
  
       <details><summary><b>CSS Validator Image</b></summary>
 
-      ![CSS Validator Image](docs/readme/images)
+      ![CSS Validator Image](docs/readme/images/css-validator.png)
       </details><br />
 
-2. All HTML files passed through the [W3C Markup Validator](https://validator.w3.org/) with no errors.
+2. All HTML files passed through the [W3C Markup Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fexposurepx-e2816574e586.herokuapp.com%2F) with no errors.
 
       <details><summary><b>MarkUp Validator Image</b></summary>
 
-      ![MarkUp Validator Image](docs/readme/images)
+      ![MarkUp Validator Image](docs/readme/images/markup-validator.png)
       </details><br />
 
 2. All JSX code pass through `npx eslint src/**/*.js` [ESLint](https://eslint.org/). All `console.log(err);` have been left in place and commented out, as it was suggested in the **"Moments" Walkthrough Project**.
@@ -302,11 +302,18 @@ Automated tests for the NavBar were run on the project using the React Testing L
 3. Lighthouse
       <details><summary><b>Lighthouse Validator Image</b></summary>
 
-      ![Lighthouse Validator Image](docs/readme/images)
+      ![Lighthouse Validator Image](docs/readme/images/lighthouse.png)
       </details><br />
 
 ### Unfixed Bugs:
--
+- No unfixed bugs found. 
+- Feedback errors such as these from the API are expected.
+Here are the examples that are absolutely fine: 
+  - three 401s on mount when not logged in,
+  - 401 error when going to sign up/ sign in page, which happens when we check if we need to redirect a logged in user away from these pages.
+  - A 401 error when providing incorrect form input such as submitting the sign in form without entering a username. 
+  - And 401 error when an access token has expired, it is refreshed in the background and the request eventually succeeds.
+
 
 [Back to top](<#table-of-contents>)
 
