@@ -37,6 +37,7 @@ This project was built as my final Advanced Frontend Portfolio submission for th
   + [Manual Testing](#manual-testing "Manual Testing")
   + [Automated Testing](#automated-testing "Automated Testing")
   + [Validator Testing](#validator-testing "Validator Testing")
+  + [Bugs](#bugs "Bugs")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
 + [Technologies Used](#technologies-used "Technologies Used")
   + [Main Languages Used](#main-languages-used "Main Languages Used")
@@ -304,6 +305,17 @@ Automated tests for the NavBar were run on the project using the React Testing L
 
       ![Lighthouse Validator Image](docs/readme/images/lighthouse.png)
       </details><br />
+
+<br />
+
+### Bugs:
+
+| **Bug** | **Error** | **Issue** | **Solution** |
+|---------------|-------------|-----------|--------------|
+| 1. **fix handleSubmit bug to events by adding a evComment value using if/else and passing into EventPage** | When integrating the event component into the comment create form file, a TypeError occurs upon form submission, indicating that the `event` value was never used. Console logs show 'post' and 'event' values as undefined. | Due to mishandling of props and variables within the `handleSubmit` function of the CommentCreateForm component, it fails to distinguish between comments for posts and events, leading to errors and undefined values. The `event` prop passed into the CommentCreateForm component is not effectively utilized. | With guidance from tutor support, Roman, adjusting the `handleSubmit` function to handle comments for posts and events correctly. - Add a conditional check based on the `evComment` prop. - If `evComment` is `true`, update the event's comment count using `setEvent`; otherwise, update the post's comment count using `setPost`. - Ensure the `evComment` prop is passed into the CommentCreateForm component from the EventPage. This solution ensures appropriate comment count updates based on the comment type, resolving the TypeError and undefined values. |
+| 2. **fix handleDelete bug by adding evPage value using if/else and passing into EventPage** | Deleting a comment in the Comments component fails to update the comment count live for posts and events. | The `handleDelete` function lacks proper logic to differentiate between post and event comments, resulting in inconsistent updates and requiring a page refresh for changes to reflect. | With assistance from tutor support, Roman, the handleDelete function was adjusted to properly decrement comment counts based on the comment's association with a post or event. - Add conditional check based on the `evPage` prop. - Utilize the `evPage` prop to determine the comment's type and update the respective count using `setPost` or `setEvent`. - Ensure the `evPage` prop is passed into the Comments component from the EventPage. This solution ensures accurate and live updates to comment counts for both posts and events, resolving the issue encountered during comment deletion. |
+
+[Back to top](<#table-of-contents>)
 
 ### Unfixed Bugs:
 - No unfixed bugs found. 
