@@ -23,13 +23,13 @@ This project was built as my final Advanced Frontend Portfolio submission for th
   + [Current User Goals](#current-user-goals "Current User Goals")
   + [New User Goals](#new-user-goals "New User Goals")
 + [User Stories](#user-stories "User Stories")
-  + [Admin stories](#admin-stories "Admin stories")
-  + [User stories](#usert-stories "User stories")
-  + [Visitor stories](#visitor-stories "Visitor stories")
+  + [User Stories and Issues](#user-stories-and-issues "User Stories and Issues")
+  + [User Stories List](#user-stories-list "User Stories List")
+  + [MoSCoW Prioritization](#moscow-prioritization "MoSCoW Prioritization")
+  + [GitHub Kanban Board](#github-kanban-board "GitHub Kanban Board")
 + [Design](#design "Design")
   + [Colour Scheme](#colour-scheme "Colour Scheme")
   + [Typography](#typography "Typography")
-  + [Imagery](#imagery "Imagery")
 + [Features](#features "Features")
   + [Existing Features](#existing-features "Existing Features")
   + [C.R.U.D](#crud "C.R.U.D")
@@ -44,6 +44,9 @@ This project was built as my final Advanced Frontend Portfolio submission for th
   + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
   + [Databases Platform and Cloud Storage](#databases-platform-and-cloud-storage "Databases Platform and Cloud Storage")
 + [Components](#components "Components")
+  + [Contexts](#contexts "Contexts")
+  + [Hooks](#hooks "Hooks")
+  + [Utils](#utils "Utils")
 + [Deployment](#deployment "Deployment")
 + [Credits](#credits "Credits")
   + [Content](#content "Content")
@@ -52,25 +55,25 @@ This project was built as my final Advanced Frontend Portfolio submission for th
 
 ## UX
 
-#### Site Purpose:
+### Site Purpose:
 The purpose of ExposePX is to provide a dynamic online community for photographers, facilitating seamless interaction among users through various features such as photo sharing, liking, commenting, and following other enthusiasts. Additionally, the platform offers the opportunity to create and join photography-related events, fostering connections and collaborations within the photography community.
 
-#### Site Goal:
+### Site Goal:
 The primary goal of ExposePX is to create and keep an engaging and user-friendly platform where photographers of all levels can connect, share their work, and participate in events tailored to their interests. The platform aims to provide a space where users can showcase their photography skills, gain inspiration from others, and build meaningful connections within the photography community.
 
-#### Audience:
+### Audience:
 The target audience for ExposePX includes photography enthusiasts of all skill levels, from amateur photographers looking to improve their skills to professional photographers seeking to showcase their work and network with peers.
 
-#### Communication:
+### Communication:
 ExposePX communicates its purpose and features through intuitive design, clear navigation, and informative content. The user interface is designed to be visually appealing and easy to navigate, with clear calls-to-action guiding users to key features such as posting photos, joining events, and interacting with other users. Additionally, the platform utilizes clear and concise messaging to inform users about upcoming events, community updates, and any relevant notifications to enhance user engagement and participation.
 
-#### Current User Goals:
+### Current User Goals:
 - Share photos and receive feedback from the community.
 - Discover and participate in photography events.
 - Connect with fellow photographers and build a network of like-minded individuals.
 - Stay updated on community news, events, and trends in the photography scene.
 
-#### New User Goals:
+### New User Goals:
 - Easily sign up and create a profile to start engaging with the community.
 - Quickly understand the platform's features and how to navigate them.
 - Find inspiration and discover new photography opportunities through the platform.
@@ -80,13 +83,21 @@ ExposePX communicates its purpose and features through intuitive design, clear n
 
 ## User Stories
 
-- **User Stories and Issues** (<a href="https://github.com/patthoege/pp5-exposurep/issues?q=is%3Aissue+is%3Aclosed" target="_blank" rel="noopener">GitHub Issues</a>): Project tasks were organized into user stories, each corresponding to specific functionalities or improvements. These user stories were then translated into GitHub issues, providing a clear and manageable way to track progress.
+### **User Stories and Issues** 
+ Project tasks were organized into user stories, each corresponding to specific functionalities or improvements. These user stories were then translated into GitHub issues, providing a clear and manageable way to track progress. It can be found <a href="https://github.com/patthoege/pp5-exposurep/issues?q=is%3Aissue+is%3Aclosed" target="_blank" rel="noopener">HERE</a>
 
-- **MoSCoW Prioritization**: The MoSCoW method was employed to prioritize project requirements and features based on their importance.
+### **User Stories List** 
+A full list of User stories can be found [HERE](docs/readme/USERSTORIES.md)
 
-- **GitHub Kanban Board** (<a href="https://github.com/users/patthoege/projects/4" target="_blank" rel="noopener">GitHub Project</a>): The GitHub Kanban board was leveraged to visualize and manage the project's workflow. It facilitated the organization of tasks, from backlog to completion, providing a visual representation of the project's status.
+### **MoSCoW Prioritization**
+The MoSCoW method was employed to prioritize project requirements and features based on their importance.
+
+### **GitHub Kanban Board** 
+The GitHub Kanban board was leveraged to visualize and manage the project's workflow. It facilitated the organization of tasks, from backlog to completion, providing a visual representation of the project's status. You can find it <a href="https://github.com/users/patthoege/projects/4" target="_blank" rel="noopener">HERE</a>
+
 
 [Back to top](<#table-of-contents>)
+
 ## Design
 
 ### Wireframes:
@@ -306,7 +317,6 @@ Automated tests for the NavBar were run on the project using the React Testing L
       ![Lighthouse Validator Image](docs/readme/images/lighthouse.png)
       </details><br />
 
-<br />
 
 ### Bugs:
 
