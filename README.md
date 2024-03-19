@@ -9,9 +9,12 @@ This section of the project is the frontend built to support the Django Rest Fra
 
 This project was built as my final Advanced Frontend Portfolio submission for the Diploma in Full Stack Software Development at [Code Institute](https://codeinstitute.net/).
 
-#### DEPLOYED BACKEND API RENDER [LINK](https://p5-drf-api-50dd27c53894.herokuapp.com/)
-#### BACKEND GITHUB [REPOSITORY](https://github.com/patthoege/pp5-drf-api)
-#### DEPLOYED FRONTEND RENDER [LINK - LIVE SITE](https://exposurepx-e2816574e586.herokuapp.com/)
+####  
+-  DEPLOYED BACKEND API RENDER [LINK](https://p5-drf-api-50dd27c53894.herokuapp.com/)
+#### 
+- BACKEND GITHUB [REPOSITORY](https://github.com/patthoege/pp5-drf-api)
+#### 
+- DEPLOYED FRONTEND RENDER [LINK - LIVE SITE](https://exposurepx-e2816574e586.herokuapp.com/)
 
 
 ## Table of Contents
@@ -48,9 +51,14 @@ This project was built as my final Advanced Frontend Portfolio submission for th
   + [Hooks](#hooks "Hooks")
   + [Utils](#utils "Utils")
 + [Deployment](#deployment "Deployment")
+  + [Running the project by using Gitpod](#running-the-project-by-using-gitpod "Running the project by using Gitpod")
+  + [Deploying with Heroku](#deploying-with-heroku "Deploying with Heroku")
+  + [Connecting Frontend to the API](#connecting-frontend-to-the-api "Connecting Frontend to the API")
+  + [Final Deploy to Heroku](#final-deploy-to-heroku "Final Deploy to Heroku")
 + [Credits](#credits "Credits")
   + [Content](#content "Content")
   + [Media](#media "Media")
+  + [Acknowledgements](#acknowledgements "Acknowledgements")
 
 
 ## UX
@@ -231,7 +239,7 @@ All fonts were obtained from the Google Fonts library. I chose the following fon
 
 [Back to top](<#table-of-contents>)
 
-### CRUD
+### C.R.U.D
 #### **Testing CRUD throughout the apps:**
 
 | App | Create | Read | Update | Delete |
@@ -401,7 +409,7 @@ Several components have been implemented within this project that have been reus
 
 ## Deployment
 
-### Running the project by using Gitpod:
+### Running the project by using Gitpod
 1. Go to the [project repository](https://github.com/patthoege/pp5-exposurep)
 2. Click the green button that says "Gitpod" and the project will now open up in Gitpod.
 
@@ -415,8 +423,7 @@ The following command in the Gitpod CLI will create the relevant files needed fo
 2. Click the `New` dropdown and select `Create New App`.
 3. Enter a name for your new project, all Heroku apps need to have a unique name, you will be prompted if you need to change it.
 4. Select the region you are working in.
-
-####  Heroku Start Deployment  
+ 
 In the Deploy tab:
 1. Connect your Heroku account to your Github Repository following these steps:
     - Click on the `Deploy` tab and choose `Github-Connect to Github`.
@@ -445,15 +452,15 @@ jwt-decode
 3. Git add, commit, and push changes to gitpod.
 4. Create the project app on Heroku, and link the GitHub repository by navigating to the 'Deploy' tab.
 
-### Connecting Frontend to the API:
-1. Navigated to the Heroku app of the project **pp5-drf-api**, and under the Settings tab, added the following configvars:
+### Connecting Frontend to the API
+1. Navigated to the Heroku app of the project [pp5-drf-api](https://github.com/patthoege/pp5-drf-api), and under the Settings tab, added the following configvars:
     - Key: `CLIENT_ORIGIN` | Value: https://react-app-name.herokuapp.com
     - Key: `CLIENT_ORIGIN_DEV` | Value: https://gitpod-browser-link.ws-eu54.gitpod.io
   
 2. Check that the trailing slash `\` at the end of both links has been removed, and save the configvar pairs.
 3. Install the Axios package, & create supporting `axiosDefaults.js` as shown in [Moments Walkthrough](https://github.com/Code-Institute-Solutions/moments/blob/cf955d2f2e6f70f61c92d1f9de85558d8e49f3a8/src/api/axiosDefaults.js).
 
-### Deploy to Heroku:
+### Final Deploy to Heroku:
 1. In the `scripts` section of `package.json` in gitpod, added the following command:
 ```
 "heroku-prebuild": "npm install -g serve",
@@ -473,13 +480,16 @@ web: serve -s build
 ### Content
 - Code Institute: The creation of the project came to life by utilising the Moments walkthrough step-by-step as a base foundation, and then building upon it to make the project my own. 
 
-- I extend my sincere gratitude to my Mentor [Martina Terlevic](https://github.com/SephTheOverwitch) for her invaluable support and insightful feedback during the development of this project.  
-- The tutors from Code Institute that helped me overcome the issues that I faced with the project.
-
-
 ### Media
 - Canva: for creating image icons, such as uploading an image, no results found and 404 Page Not Found.
 - Images for the Posts & Events made for the site have been accumulated from numerous sources and my own photography.
+
+### Acknowledgements
+Finally, I would like to extend my sincere gratitude to my Mentor [Martina Terlevic](https://github.com/SephTheOverwitch) for her much appreciated guidance, advice and encouragement during this final challenging project! I would also like to thank the tutors from Code Institute that helped me overcome issues that I faced with the project.
+
+Best wishes and happy coding!
+
+Patricia Hoege
 
 
 [Back to top](<#table-of-contents>)
