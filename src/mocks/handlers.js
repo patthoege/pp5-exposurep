@@ -1,6 +1,6 @@
 import { rest } from "msw";
 
-const baseURL = "https://web-production-278a3.up.railway.app/"
+const baseURL = "https://pp5-backend-api.up.railway.app/";
 
 export const handlers = [
   rest.get(`${baseURL}dj-rest-auth/user/`, (req, res, ctx) => {
